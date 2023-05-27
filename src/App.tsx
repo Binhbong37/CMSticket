@@ -1,24 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ticketLogo from './assets/icons/ticket.svg'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={ticketLogo} alt="ticket" />
+      <h1>CMS-Tickets</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores impedit voluptatibus cum aliquam, at voluptate neque consequuntur voluptas explicabo hic deserunt fugiat, quas illum saepe corporis iusto vero quod dolorem?</p>
     </div>
   );
 }
