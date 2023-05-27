@@ -3,20 +3,30 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home, DoiSoatVe, QuanLyVe } from './pages/dashboard';
 import NavLinks from "./Components/NavLink";
 import NotFound from './pages/NotFound';
+import Header from './Components/Header';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Header />
+      <div className='dasboard'>
+        <div className='leftSide'>
 
-        <Route path='/' element={<Home />} />
-        <Route path='/doi-soat-ve' element={<DoiSoatVe />} />
-        <Route path='/quan-ly-ve' element={<QuanLyVe />} />
+          <NavLinks />
+        </div>
+        <div className='rightSide'>
+          <Routes>
 
-        <Route path='*' element={<NotFound />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/doi-soat-ve' element={<DoiSoatVe />} />
+            <Route path='/quan-ly-ve' element={<QuanLyVe />} />
 
-      </Routes>
+            <Route path='*' element={<NotFound />} />
 
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
