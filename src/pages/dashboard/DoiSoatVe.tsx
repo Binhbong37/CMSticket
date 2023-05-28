@@ -2,7 +2,9 @@ import React from 'react'
 
 const DoiSoatVe = () => {
   return (
-    <div>DoiSoatVe</div>
+    <div>
+      <h2 className='title'>Đối soát vé</h2>
+    </div>
   )
 }
 

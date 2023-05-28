@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, DoiSoatVe, QuanLyVe } from './pages/dashboard';
+import { Home, DoiSoatVe, QuanLyVe, DSgoive } from './pages/dashboard';
 import NavLinks from "./Components/NavLink";
 import NotFound from './pages/NotFound';
 import Header from './Components/Header';
@@ -21,6 +21,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/doi-soat-ve' element={<DoiSoatVe />} />
             <Route path='/quan-ly-ve' element={<QuanLyVe />} />
+            <Route path='/danh-sach-su-kien' element={<DSgoive />} />
 
             <Route path='*' element={<NotFound />} />
 
