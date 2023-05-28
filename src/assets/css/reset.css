@@ -76,3 +76,11 @@ body {
     font-weight: 700;
     color: #1e0d03;
 }
+
+.btn {
+    border: 1px solid #ff993c;
+    outline: none;
+    background-color: unset;
+    color: #ff993c;
+    cursor: pointer;
+}
