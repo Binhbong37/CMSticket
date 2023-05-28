@@ -4,7 +4,14 @@
     column-gap: 1.5rem;
 }
 
-.loaiGoi .giaDinh {
+.loaiGoi p:hover {
+    cursor: pointer;
+    color: #ff993c;
+    border-bottom: 3px solid #ff993c;
+    font-weight: 700;
+}
+
+.loaiGoi .clicked {
     color: #ff993c;
     border-bottom: 3px solid #ff993c;
     font-weight: 700;
@@ -14,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .search {

@@ -126,6 +126,6 @@ const data: DataType[] = [
   },
 ];
 
-const TableAnt: React.FC = () => <Table columns={columns} dataSource={data} />;
+const TableGiaDinh: React.FC = () => <Table columns={columns} dataSource={data} />;
 
-export default TableAnt;
+export default TableGiaDinh;
