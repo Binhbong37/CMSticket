@@ -1,3 +1,15 @@
+.loaiGoi {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.loaiGoi .giaDinh {
+    color: #ff993c;
+    border-bottom: 3px solid #ff993c;
+    font-weight: 700;
+}
+
 .search-filter {
     display: flex;
     justify-content: space-between;

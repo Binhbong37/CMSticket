@@ -84,3 +84,7 @@ body {
     color: #ff993c;
     cursor: pointer;
 }
+
+.ant-table-pagination {
+    justify-content: center !important;
+}

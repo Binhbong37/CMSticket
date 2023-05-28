@@ -1,5 +1,4 @@
 import React from 'react';
-import '../assets/css/searchFilter.css'
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiFilter } from 'react-icons/fi'
 
