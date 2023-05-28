@@ -2,7 +2,9 @@ import React from 'react'
 
 const QuanLyVe = () => {
   return (
-    <div>QuanLyVe</div>
+    <div>
+      <h2 className='title'>Danh sách vé</h2>
+    </div>
   )
 }
 

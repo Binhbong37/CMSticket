@@ -16,8 +16,8 @@ const links:Icons[] = [
   { id: 1, text: 'Trang chủ', path: '/', icon: AiOutlineHome },
   {id:2, text:'Quản lý vé', path:'/quan-ly-ve', icon:BsTicket},
   {id:3, text:'Đối soát vé', path:'/doi-soat-ve', icon:TbFileInvoice},
-  {id:3, text:'Danh sách sự kiện', path:'/danh-sach-su-kien', icon:AiOutlineMenu},
-  {id:4, text:'Cài đặt', path:'/cai-dat', icon:AiOutlineSetting},
+  {id:4, text:'Danh sách sự kiện', path:'/danh-sach-su-kien', icon:AiOutlineMenu},
+  {id:5, text:'Cài đặt', path:'/cai-dat', icon:AiOutlineSetting},
 ];
 
 export default links;
