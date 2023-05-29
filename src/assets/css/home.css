@@ -1,0 +1,10 @@
+.chart-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-top .doanhThu {
+    font-size: 1.8rem;
+    font-weight: bold;
+}

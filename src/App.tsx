@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home, DoiSoatVe, QuanLyVe, DSgoive } from './pages/dashboard';
 import NavLinks from "./Components/NavLink";
@@ -12,7 +11,6 @@ function App() {
       <Header />
       <div className='dasboard'>
         <div className='leftSide'>
-
           <NavLinks />
         </div>
         <div className='rightSide'>
