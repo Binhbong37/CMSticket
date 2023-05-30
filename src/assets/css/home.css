@@ -8,3 +8,11 @@
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+.totalDoanhthu {
+    margin-top: 2rem;
+}
+
+.totalDoanhthu .tit {
+    color: #1e0d03;
+}

@@ -26,6 +26,10 @@ const Home = () => {
         </div>
         <ChartLine aspect={3 / 1} />
       </div>
+      <div className='totalDoanhthu'>
+        <p className='tit'>Tổng doanh thu theo tuần</p>
+        <p className=''><span className='title'>525.145.000</span> đồng</p>
+      </div>
     </div>
   )
 }
