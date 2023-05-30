@@ -40,7 +40,7 @@ const ChartLine = ({ aspect }: typeProps) => {
         </defs>
         <XAxis dataKey="name" stroke="gray" />
         <YAxis />
-        <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
+        <CartesianGrid vertical={false} strokeDasharray="3" className="chartGrid" />
         <Tooltip />
         <Area
           type="monotone"

@@ -88,3 +88,7 @@ body {
 .ant-table-pagination {
     justify-content: center !important;
 }
+
+.ant-picker-suffix {
+    color: #ff993c !important;
+}

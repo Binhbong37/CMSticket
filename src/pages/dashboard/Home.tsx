@@ -4,13 +4,25 @@ import { DatePicker } from 'antd';
 import '../../assets/css/home.css'
 
 const Home = () => {
+
   return (
     <div>
       <h2 className='title'>Thống kê</h2>
       <div className='chartline'>
         <div className='chart-top'>
           <p className='doanhThu'>Doanh thu</p>
-          <DatePicker />
+          <DatePicker
+            placeholder='Tháng 4, 2021'
+            style={{
+              height: "auto",
+              width: "auto",
+              border: "1px solid #E6E0E0",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "17px",
+              padding: "8px 1.2rem"
+            }}
+          />
         </div>
         <ChartLine aspect={3 / 1} />
       </div>
