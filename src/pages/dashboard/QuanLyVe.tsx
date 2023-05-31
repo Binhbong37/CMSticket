@@ -26,7 +26,7 @@ const QuanLyVe = () => {
         >Gói sự kiện</p>
       </div>
       <div className=''>
-        <SearchFilter />
+        <SearchFilter quanlyve={true} doisoatve={false} />
       </div>
       <div className=''>
         {

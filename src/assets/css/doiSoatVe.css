@@ -2,3 +2,12 @@
     display: flex;
     gap: 2.4rem;
 }
+
+.btn-ds {
+    color: #fff;
+    padding: 11px 2.4rem;
+    border-radius: 6px;
+    background-color: #ff993c;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
