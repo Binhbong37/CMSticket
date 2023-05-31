@@ -62,11 +62,7 @@ body {
 }
 
 .rightSide {
-    width: 80vw;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 2.4rem;
-    padding: 2.4rem;
+    min-width: 80vw;
     min-height: 100vh;
     height: 100%;
 }
@@ -91,4 +87,10 @@ body {
 
 .ant-picker-suffix {
     color: #ff993c !important;
+}
+
+.box-container {
+    background-color: #fff;
+    border-radius: 2.4rem;
+    padding: 2.4rem;
 }

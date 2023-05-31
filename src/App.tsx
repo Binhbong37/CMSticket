@@ -15,7 +15,6 @@ function App() {
         </div>
         <div className='rightSide'>
           <Routes>
-
             <Route path='/' element={<Home />} />
             <Route path='/doi-soat-ve' element={<DoiSoatVe />} />
             <Route path='/quan-ly-ve' element={<QuanLyVe />} />

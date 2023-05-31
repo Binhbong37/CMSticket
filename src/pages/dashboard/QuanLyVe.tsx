@@ -3,6 +3,7 @@ import '../../assets/css/quanLyVe.css'
 import SearchFilter from '../../Components/SearchFilter'
 import TableGiaDinh from '../../Components/TableGiaDinh'
 import TableSuKien from '../../Components/TableSuKien';
+import Box from '../../Components/Box';
 
 const QuanLyVe = () => {
   const [loaiGoi, setLoaiGoi] = useState('giaDinh');
@@ -12,7 +13,7 @@ const QuanLyVe = () => {
     setLoaiGoi(ve)
   }
   return (
-    <div>
+    <Box>
       <h2 className='title'>Danh sách vé</h2>
       <div className='loaiGoi'>
         <p
@@ -34,10 +35,8 @@ const QuanLyVe = () => {
         {
           loaiGoi === 'suKien' && <TableSuKien />
         }
-
-
       </div>
-    </div>
+    </Box>
   )
 }
 

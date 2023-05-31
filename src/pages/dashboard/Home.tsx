@@ -3,11 +3,12 @@ import ChartLine from '../../Components/ChartLine';
 import { DatePicker } from 'antd';
 import '../../assets/css/home.css'
 import PieChart from '../../Components/PieChart';
+import Box from '../../Components/Box';
 
 const Home = () => {
 
   return (
-    <div>
+    <Box style={{ width: "100%" }}>
       <h2 className='title'>Thống kê</h2>
       <div className='chartline'>
         <div className='chart-top'>
@@ -41,7 +42,7 @@ const Home = () => {
         </div>
         <PieChart />
       </div>
-    </div>
+    </Box>
   )
 }
 
