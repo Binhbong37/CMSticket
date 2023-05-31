@@ -2,6 +2,7 @@ import React from 'react'
 import ChartLine from '../../Components/ChartLine';
 import { DatePicker } from 'antd';
 import '../../assets/css/home.css'
+import PieChart from '../../Components/PieChart';
 
 const Home = () => {
 
@@ -26,9 +27,14 @@ const Home = () => {
         </div>
         <ChartLine aspect={3 / 1} />
       </div>
+
       <div className='totalDoanhthu'>
         <p className='tit'>Tổng doanh thu theo tuần</p>
         <p className=''><span className='title'>525.145.000</span> đồng</p>
+      </div>
+
+      <div className='pie-chart'>
+        <PieChart />
       </div>
     </div>
   )
