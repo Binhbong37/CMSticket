@@ -41,6 +41,7 @@ const PieChart = () => {
     <div className="pie-note">
       <div className="pie">
         <Piech width={800} height={400}>
+
           <Pie
             data={data}
             cx={300}
@@ -52,6 +53,7 @@ const PieChart = () => {
             fill="#8884d8"
             paddingAngle={-10}
             dataKey="value"
+
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

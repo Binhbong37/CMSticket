@@ -17,6 +17,11 @@
     color: #1e0d03;
 }
 
+.labelPie {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .pie-note {
     display: flex;
     align-items: center;

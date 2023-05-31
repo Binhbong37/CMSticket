@@ -34,6 +34,11 @@ const Home = () => {
       </div>
 
       <div className='pie-chart'>
+        <div className='labelPie'>
+          <DatePicker />
+          <p className=''>Gói gia đình</p>
+          <p>Gói sự kiện</p>
+        </div>
         <PieChart />
       </div>
     </div>
