@@ -1,0 +1,9 @@
+.form-group {
+    display: flex;
+    column-gap: 20px;
+}
+
+.form-group h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
