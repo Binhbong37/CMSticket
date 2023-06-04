@@ -1,9 +1,18 @@
-import React from 'react'
 import ChartLine from '../../Components/ChartLine';
 import { DatePicker } from 'antd';
 import '../../assets/css/home.css'
-import PieChart from '../../Components/PieChart';
+import CircleChart from '../../Components/PieChart';
 import Box from '../../Components/Box';
+
+const familyPackage = [
+  { name: 'Tickets used', value: 560 },
+  { name: 'Unused ticket', value: 135 }
+]
+
+const eventPackage = [
+  { name: 'Tickets used', value: 302 },
+  { name: 'Unused ticket', value: 283 }
+]
 
 const Home = () => {
 
@@ -35,12 +44,33 @@ const Home = () => {
       </div>
 
       <div className='pie-chart'>
-        <div className='labelPie'>
+        <div className='piker'>
           <DatePicker />
-          <p className=''>Gói gia đình</p>
-          <p>Gói sự kiện</p>
+
         </div>
-        <PieChart />
+        <div className='pie-circle'>
+          <div className='groupLabel'>
+            <p>Gói gia đình</p>
+            <CircleChart data={familyPackage} />
+          </div>
+          <div className='groupLabel'>
+            <p>Gói sự kiện</p>
+            <CircleChart data={eventPackage} />
+          </div>
+        </div>
+
+        <div className='notePie'>
+          <div className='notePie-block'>
+            <p className='colorNote1'></p>
+            <p>Vé đã sử dụng</p>
+          </div>
+          <div className='notePie-block'>
+            <p className='colorNote2'></p>
+            <p>Vé chưa sử dụng</p>
+          </div>
+
+        </div>
+
       </div>
     </Box>
   )
