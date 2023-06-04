@@ -12,6 +12,9 @@ function App() {
       <div className='dasboard'>
         <div className='leftSide'>
           <NavLinks />
+          <div className='copyright'>
+            <p>Copyright 2020 Alta Software </p>
+          </div>
         </div>
         <div className='rightSide'>
           <Routes>

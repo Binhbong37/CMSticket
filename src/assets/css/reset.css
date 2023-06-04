@@ -59,6 +59,14 @@ body {
 
 .leftSide {
     padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftSide .copyright {
+    color: #1e0d03;
+    font-size: 1.4rem;
 }
 
 .rightSide {
