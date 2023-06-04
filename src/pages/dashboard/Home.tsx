@@ -1,8 +1,8 @@
 import ChartLine from '../../Components/ChartLine';
-import { DatePicker } from 'antd';
 import '../../assets/css/home.css'
 import CircleChart from '../../Components/PieChart';
 import Box from '../../Components/Box';
+import DatePickerCus from '../../Components/DatePickerCus';
 
 const familyPackage = [
   { name: 'Tickets used', value: 560 },
@@ -22,17 +22,7 @@ const Home = () => {
       <div className='chartline'>
         <div className='chart-top'>
           <p className='doanhThu'>Doanh thu</p>
-          <DatePicker
-            placeholder='Tháng 4, 2021'
-            style={{
-              height: "auto",
-              width: "auto",
-              border: "1px solid #E6E0E0",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontSize: "17px",
-              padding: "8px 1.2rem"
-            }}
+          <DatePickerCus
           />
         </div>
         <ChartLine aspect={3 / 1} />
@@ -45,8 +35,7 @@ const Home = () => {
 
       <div className='pie-chart'>
         <div className='piker'>
-          <DatePicker />
-
+          <DatePickerCus />
         </div>
         <div className='pie-circle'>
           <div className='groupLabel'>
