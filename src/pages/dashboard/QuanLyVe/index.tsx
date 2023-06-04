@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../../assets/css/quanLyVe.css'
-import SearchFilter from '../../Components/SearchFilter'
-import TableGiaDinh from '../../Components/TableGiaDinh'
-import TableSuKien from '../../Components/TableSuKien';
-import Box from '../../Components/Box';
+import '../../../assets/css/quanLyVe.css'
+import SearchFilter from '../../../Components/SearchFilter';
+import TableGiaDinh from '../../../Components/TableGiaDinh';
+import TableSuKien from '../../../Components/TableSuKien';
+import Box from '../../../Components/Box';
 
 const QuanLyVe = () => {
   const [loaiGoi, setLoaiGoi] = useState('giaDinh');

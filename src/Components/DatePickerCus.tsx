@@ -7,7 +7,7 @@ const DatePickerCus = () => {
   return (
     <DatePicker defaultValue={dayjs('2024/01/01', dateFormat)} format={dateFormat}
       style={{
-        border: "1px solid #ff993c",
+        border: "1px solid #E6E0E0",
         borderRadius: "4px",
         cursor: "pointer",
         fontSize: "17px",

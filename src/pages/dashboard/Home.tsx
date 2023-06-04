@@ -5,13 +5,13 @@ import Box from '../../Components/Box';
 import DatePickerCus from '../../Components/DatePickerCus';
 
 const familyPackage = [
-  { name: 'Tickets used', value: 560 },
-  { name: 'Unused ticket', value: 135 }
+  { name: 'Tickets used', value: 56024 },
+  { name: 'Unused ticket', value: 13568 }
 ]
 
 const eventPackage = [
-  { name: 'Tickets used', value: 302 },
-  { name: 'Unused ticket', value: 283 }
+  { name: 'Tickets used', value: 30256 },
+  { name: 'Unused ticket', value: 28302 }
 ]
 
 const Home = () => {
