@@ -21,7 +21,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/doi-soat-ve' element={<DoiSoatVe />} />
             <Route path='/quan-ly-ve' element={<QuanLyVe />} />
-            <Route path='/danh-sach-su-kien' element={<DSgoive />} />
+            <Route path='/cai-dat' element={<DSgoive />} />
 
             <Route path='*' element={<NotFound />} />
 

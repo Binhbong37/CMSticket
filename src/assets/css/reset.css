@@ -44,11 +44,22 @@ body {
     font-size: 2rem;
 }
 
+.nav-link:hover {
+    background-color: #ffb800;
+    font-weight: 700;
+    border-radius: 8px;
+    color: #fff;
+}
+
 .active {
     background-color: #ffb800;
     font-weight: 700;
     border-radius: 8px;
     color: #fff;
+}
+
+.active .icon svg {
+    fill: #fff;
 }
 
 .dasboard {
@@ -67,6 +78,12 @@ body {
 .leftSide .copyright {
     color: #1e0d03;
     font-size: 1.4rem;
+}
+
+.icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #1e0d03;
 }
 
 .rightSide {

@@ -1,23 +1,19 @@
-import { IconType } from "react-icons";
-import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineSetting } from "react-icons/ai";
-import { AiOutlineMenu } from "react-icons/ai";
-import { BsTicket } from "react-icons/bs";
-import { TbFileInvoice } from "react-icons/tb";
+
+
+import { HomeIcon, TicketIcon, SettingIcon, ListIcon } from "../Components/Icons";
 
 interface Icons {
   id: number,
   text:string,
   path:string,
-  icon: IconType
+  icon: any
 }
 
 const links:Icons[] = [
-  { id: 1, text: 'Trang chủ', path: '/', icon: AiOutlineHome },
-  {id:2, text:'Quản lý vé', path:'/quan-ly-ve', icon:BsTicket},
-  {id:3, text:'Đối soát vé', path:'/doi-soat-ve', icon:TbFileInvoice},
-  {id:4, text:'Danh sách sự kiện', path:'/danh-sach-su-kien', icon:AiOutlineMenu},
-  {id:5, text:'Cài đặt', path:'/cai-dat', icon:AiOutlineSetting},
+  { id: 1, text: 'Trang chủ', path: '/', icon: HomeIcon},
+  {id:2, text:'Quản lý vé', path:'/quan-ly-ve', icon:TicketIcon},
+  {id:3, text:'Đối soát vé', path:'/doi-soat-ve', icon:ListIcon},
+  {id:5, text:'Cài đặt', path:'/cai-dat', icon:SettingIcon},
 ];
 
 export default links;
