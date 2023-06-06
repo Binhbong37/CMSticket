@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const useQueryParams = () => {
   const [getSearchParams] = useSearchParams()
