@@ -7,7 +7,7 @@ import useQueryParams from '../../hooks/useQueryparams';
 import usePagination from '../../hooks/usePagination';
 import { RootState, useAppDispatch } from '../../store';
 import { db } from '../../firebase';
-import { startAdd, startFilter } from '../../store/manageTicketSlice'
+import { startFilter } from '../../store/manageTicketSlice'
 import PageWrapper from '../../components/PageWrapper'
 import PageTitle from '../../components/PageTiltle'
 import Button from '../../components/Button'
@@ -95,9 +95,6 @@ function ManagePage() {
     }
   }, [endDate, gates, startDate, status])
 
-  const handleStartAdd = () => {
-    dispatch(startAdd())
-  }
 
   const handleStartFiter = () => {
     dispatch(startFilter())
@@ -113,9 +110,6 @@ function ManagePage() {
           className={cx('tool__search')}
         />
         <div className={cx('tool__btn')}>
-          <Button large onClick={handleStartAdd}>
-            Thêm vé
-          </Button>
           <Button large outline leftIcon={<FilterIcon />} onClick={handleStartFiter}>
             Lọc vé
           </Button>
