@@ -1,0 +1,45 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import './LayoutStyle.css';
+@import './TableStyles.css';
+
+:root {
+    --font-family: 'Montserrat', sans-serif;
+    --text-color: #282739;
+    --primary-color: #ff7506;
+    --border-color: #e5e0e0;
+    --red-color: #e73f3f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 20px;
+    text-rendering: optimizespeed;
+    color: var(--text-color);
+    background-color: #f9f6f4;
+    user-select: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    user-select: none;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}

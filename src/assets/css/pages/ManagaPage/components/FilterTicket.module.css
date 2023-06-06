@@ -1,0 +1,44 @@
+.container {
+    width: 634px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 40px;
+}
+
+.group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.group.group__2 {
+    gap: 150px;
+}
+
+.group.group__4 {
+    justify-content: space-between;
+}
+
+.group.group__6 {
+    flex-wrap: wrap;
+}
+
+.group.group__6 .item {
+    width: 33.33333%;
+    flex: none;
+    margin: 10px 0;
+}
+
+.label {
+    margin-bottom: 10px;
+}
+
+.item {
+    flex: 1;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
