@@ -7,7 +7,7 @@ function TableHeader() {
       <th className='table-col'>Ngày sử dụng</th>
       <th className='table-col'>Tên loại vé</th>
       <th className='table-col'>Cổng check - in</th>
-      <th className='table-col' >...</th>
+      <th className='table-col' ></th>
     </tr>
   )
 }

@@ -29,7 +29,7 @@ function AddTicket() {
   // const [listPackage, setListPackage] = useState<string[]>([])
   const [applyDate, setApplyDate] = useState<Date | undefined>(today)
   const [useDate, setUseDate] = useState<Date | undefined>(today)
-  // const [isPending, setIsPending] = useState(false)
+  const [isPending, setIsPending] = useState(false)
 
   const {
     register,
@@ -47,10 +47,9 @@ function AddTicket() {
       useDate: (useDate as Date).getTime()
     }
 
-    console.log(formData)
-    // setIsPending(true)
-    // await dispatch(addTicket(formData))
-    // setIsPending(false)
+    setIsPending(true)
+    await dispatch(addTicket(formData))
+    setIsPending(false)
     // dispatch(cancelAdd())
   })
 
@@ -156,7 +155,7 @@ function AddTicket() {
             Huỷ
           </Button>
           <Button large
-            // disabled={isPending}
+            disabled={isPending}
 
             type='submit'
           >

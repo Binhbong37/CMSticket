@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
 import { CSVLink } from 'react-csv';
 import { useSelector } from 'react-redux'
-
 import useQueryParams from '../../hooks/useQueryparams';
 import usePagination from '../../hooks/usePagination';
 import { db } from '../../firebase';
@@ -22,7 +21,8 @@ const cx = classNames.bind(styles)
 
 function CheckPage() {
   const searchParams = useQueryParams()
-  const { type, checkStatus, startDate, endDate } = searchParams
+  const { type, checkStatus, startDate, endDate } = searchParams;
+
   const [tickets, setTickets] = useState<any>([])
   const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 8)
   const checkTicket: any | null = useSelector((state: RootState) => state.manage.checkItem)
@@ -68,7 +68,7 @@ function CheckPage() {
       }
     }
 
-    const ticketRef = collection(db, 'tickets')
+    const ticketRef = collection(db, 'tickets');
     const q = query(
       ticketRef,
       typeQuery(type),

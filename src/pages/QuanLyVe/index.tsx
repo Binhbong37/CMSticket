@@ -152,7 +152,7 @@ function ManagePage() {
           <tbody>
             {dummyData.map((dumy, index) => {
               return (
-                <TableRow index={index} ticket={dumy} />
+                <TableRow key={index} index={index} ticket={dumy} />
               )
             })}
 

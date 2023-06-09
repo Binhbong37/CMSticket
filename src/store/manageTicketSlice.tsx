@@ -71,16 +71,16 @@ const manageTicketSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(updateDateTicket.fulfilled, () => {
-        console.log('success')
-      })
-      .addCase(addTicket.fulfilled, () => {
-        console.log('success')
-      })
-      .addCase(checkTicket.fulfilled, () => {
-        console.log('success')
-      })
+    // add ticket
+    builder.addCase(addTicket.pending, () => {
+      console.log('pending addTicket')
+    });
+    builder.addCase(addTicket.fulfilled, () => {
+      console.log('addTicket success')
+    });
+    builder.addCase(checkTicket.rejected, () => {
+      console.log('addTicket failled')
+    })
   }
 })
 
