@@ -7,7 +7,7 @@ import { ErrorIcon } from '../Icons'
 const cx = classNames.bind(styles)
 
 interface Props extends SelectHTMLAttributes<HTMLSelectElement> {
-  errorMessage?: string
+  errorMessage?: any
   rules?: RegisterOptions
   register?: UseFormRegister<any>
   options: string[]

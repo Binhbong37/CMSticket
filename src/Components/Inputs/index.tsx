@@ -7,7 +7,7 @@ import styles from '../../assets/css/components/Input.module.css'
 const cx = classNames.bind(styles)
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  errorMessage?: string
+  errorMessage?: any
   rules?: RegisterOptions
   register?: UseFormRegister<any>
 }

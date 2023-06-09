@@ -1,28 +1,19 @@
 import { useRoutes, Outlet, Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux/es/hooks/useSelector'
-
 import routes from '../configs/routes';
 import DefaultLayout from '../layouts/DefaultLayout';
 import NoneLayout from '../layouts/NoneLayout';
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
-import ProfilePage from '../pages/ProfilePage';
-import ManagePage from '../pages/ManagePage';
-import CheckPage from '../pages/CheckPage';
-import SettingPackagePage from '../pages/SettingPakagePage';
-import { RootState } from '../store';
+import Home from '../pages/Home'
+import DangNhap from '../pages/DangNhap';
+import QuanLyVe from '../pages/QuanLyVe';
+import DoiSoatVe from '../pages/DoiSoatVe';
+import CaiDat from '../pages/CaiDat';
 
 const ProtectedRoute = () => {
-  const isAuthenticated: boolean = useSelector(
-    (state: RootState) => state.authenticate.isAuthenticated
-  )
-  return isAuthenticated ? <Outlet /> : <Navigate to={routes.login} />
+  return true ? <Outlet /> : <Navigate to={routes.DangNhap} />
 }
 
 const RejectedRoute = () => {
-  const isAuthenticated: boolean = useSelector(
-    (state: RootState) => state.authenticate.isAuthenticated
-  )
+  const isAuthenticated: boolean = true
 
   return !isAuthenticated ? <Outlet /> : <Navigate to={routes.home} />
 }
@@ -38,47 +29,39 @@ const useRouteElement = () => {
           index: true,
           element: (
             <DefaultLayout>
-              <HomePage />
+              <Home />
             </DefaultLayout>
           )
         },
         {
-          path: routes.profile,
+          path: routes.QuanLyVe,
           element: (
             <DefaultLayout>
-              <ProfilePage />
+              <QuanLyVe />
             </DefaultLayout>
           )
         },
         {
-          path: routes.manage,
+          path: routes.DoiSoatVe,
           element: (
             <DefaultLayout>
-              <ManagePage />
+              <DoiSoatVe />
             </DefaultLayout>
           )
         },
         {
-          path: routes.check,
+          path: routes.CaiDat,
           element: (
             <DefaultLayout>
-              <CheckPage />
+              <CaiDat />
             </DefaultLayout>
           )
         },
         {
-          path: routes.setting,
+          path: routes.CaiDat_Goi,
           element: (
             <DefaultLayout>
-              <SettingPackagePage />
-            </DefaultLayout>
-          )
-        },
-        {
-          path: routes.setting_package,
-          element: (
-            <DefaultLayout>
-              <SettingPackagePage />
+              <CaiDat />
             </DefaultLayout>
           )
         }
@@ -89,10 +72,10 @@ const useRouteElement = () => {
       element: <RejectedRoute />,
       children: [
         {
-          path: routes.login,
+          path: routes.DangNhap,
           element: (
             <NoneLayout>
-              <LoginPage />
+              <DangNhap />
             </NoneLayout>
           )
         }

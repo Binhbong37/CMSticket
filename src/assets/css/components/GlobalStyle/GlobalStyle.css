@@ -6,7 +6,8 @@
 :root {
     --font-family: 'Montserrat', sans-serif;
     --text-color: #282739;
-    --primary-color: #ff7506;
+    --primary-color: #ffb800;
+    --secondary-color: #ff993c;
     --border-color: #e5e0e0;
     --red-color: #e73f3f;
 }

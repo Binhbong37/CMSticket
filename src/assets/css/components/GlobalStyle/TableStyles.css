@@ -2,8 +2,15 @@
     border-collapse: collapse;
     width: 100%;
     filter: drop-shadow(2px 2px 8px rgba(232, 239, 244, 0.8));
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
+}
+
+table thead .table-row {
+    background-color: #f1f4f8 !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
 }
 
 .table-col {
@@ -15,24 +22,20 @@
     border-left: 1px solid #ffe3cd;
 }
 
+table tbody .table-row:nth-child(odd) {
+    background-color: #fff;
+}
+
+table tbody .table-row:nth-child(even) {
+    background-color: #f7f8fb;
+}
+
 .table-row {
     height: 49px;
     background-color: white;
     font-size: 1.4rem;
     line-height: 2.1rem;
     font-weight: 400;
-    color: var(--text-color);
-}
-
-.table-row:nth-child(odd) {
-    background-color: #f1f4f8;
-}
-
-.table-row:nth-child(1) {
-    background-color: #caceda;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    font-weight: 700;
     color: var(--text-color);
 }
 

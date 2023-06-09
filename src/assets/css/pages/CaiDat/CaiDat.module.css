@@ -1,0 +1,24 @@
+.tool {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.tool__search {
+    width: 350px;
+}
+
+.tool__btn {
+    display: flex;
+}
+
+.tool__export {
+    margin-right: 8px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

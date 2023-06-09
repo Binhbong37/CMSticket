@@ -1,7 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { doc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase';
-// import TicketType from '~/types/TicketType'
 
 interface Types {
   updateItem: any | null
@@ -47,9 +46,7 @@ const manageTicketSlice = createSlice({
   name: 'manage_ticket',
   reducers: {
     startAdd: (state) => {
-      console.log('add')
       state.isAddTicket = true;
-      console.log(state)
     },
     cancelAdd: (state) => {
       state.isAddTicket = false

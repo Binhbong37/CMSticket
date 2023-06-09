@@ -13,13 +13,13 @@ import {
 const cx = classNames.bind(styles)
 
 const data = [
-  { name: 'Thứ 2', Total: 15 },
-  { name: 'Thứ 3', Total: 17 },
-  { name: 'Thứ 4', Total: 18 },
-  { name: 'Thứ 5', Total: 20 },
-  { name: 'Thứ 6', Total: 22 },
-  { name: 'Thứ 7', Total: 20 },
-  { name: 'CN', Total: 25 }
+  { name: 'Thứ 2', Total: 220 },
+  { name: 'Thứ 3', Total: 170 },
+  { name: 'Thứ 4', Total: 180 },
+  { name: 'Thứ 5', Total: 200 },
+  { name: 'Thứ 6', Total: 260 },
+  { name: 'Thứ 7', Total: 240 },
+  { name: 'CN', Total: 250 }
 ]
 
 function AreaChartItem() {
@@ -28,8 +28,8 @@ function AreaChartItem() {
       <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
         <defs>
           <linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
-            <stop offset='26%' stopColor='#FAA05F' stopOpacity={0.2} />
-            <stop offset='74%' stopColor='white' stopOpacity={0} />
+            <stop offset='5%' stopColor='#FF993C' stopOpacity={0.3} />
+            <stop offset='95%' stopColor='#FF993C' stopOpacity={0} />
           </linearGradient>
         </defs>
         <XAxis dataKey='name' stroke='gray' padding={{ left: 40 }} />

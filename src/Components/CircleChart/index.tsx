@@ -35,8 +35,8 @@ function CircleChart({ data }: Props) {
           cx='50%'
           cy='50%'
           startAngle={-270}
-          innerRadius={20}
-          outerRadius={60}
+          innerRadius={30}
+          outerRadius={70}
           stroke='none'
           label={renderCustomizedLabel}
           labelLine={false}

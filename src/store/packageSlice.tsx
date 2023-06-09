@@ -1,7 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { doc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
-// import PackageType from '~/types/PackageType'
 
 interface Types {
   editItem: any | null

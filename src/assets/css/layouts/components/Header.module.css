@@ -1,7 +1,18 @@
 .wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.header-search {
+    background-color: #ededed;
+    max-width: 470px;
+    width: 100%;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
     gap: 30px;
     flex-grow: 0;
     height: 54px;

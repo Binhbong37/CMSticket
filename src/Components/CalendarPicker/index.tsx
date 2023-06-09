@@ -11,7 +11,6 @@ import {
   type Placement
 } from '@floating-ui/react'
 import { format } from 'date-fns'
-
 import { CalendarIcon } from '../Icons'
 import styles from '../../assets/css/components/CalenderPicker.module.css'
 import 'react-day-picker/dist/style.css'
@@ -24,6 +23,8 @@ interface Props {
   formatDate?: string
   placement?: Placement
 }
+
+
 
 function CalenderPicker({
   formatDate = 'dd/MM/yyy',
@@ -38,7 +39,9 @@ function CalenderPicker({
     onOpenChange: setIsOpen,
     placement: placement
   })
+
   const click = useClick(context)
+
   const dismiss = useDismiss(context, {
     outsidePressEvent: 'mousedown'
   })
@@ -57,12 +60,13 @@ function CalenderPicker({
     day_outside: cx('custom-day-outside')
   }
 
+
   return (
     <div>
       <div className={cx('date-display-content')} ref={refs.setReference} {...getReferenceProps()}>
         <div className={cx('date-display')}>
-          <CalendarIcon className={cx('calendar_icon')} />
           {selectedDate ? format(selectedDate, formatDate) : 'dd/MM/yyy'}
+          <CalendarIcon className={cx('calendar_icon')} />
         </div>
       </div>
       {isOpen && (
