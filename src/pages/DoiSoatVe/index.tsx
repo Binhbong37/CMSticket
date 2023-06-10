@@ -20,7 +20,7 @@ import Spinner from '../../components/Spinner';
 
 const cx = classNames.bind(styles)
 
-function CheckPage() {
+const DoiSoatVe = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState('')
   const searchParams = useQueryParams()
@@ -161,4 +161,4 @@ function CheckPage() {
   )
 }
 
-export default CheckPage
+export default DoiSoatVe

@@ -59,17 +59,17 @@ function FilterTicket() {
     console.log(searchParams)
     console.log({ useStatus })
     console.log(gates)
-    // navigate({
-    //   pathname: routes.QuanLyVe,
-    //   search: createSearchParams({
-    //     ...searchParams,
-    //     status: useStatus,
-    //     gates: gates.toString(),
-    //     startDate: new Date(startDate || 0).getTime().toString(),
-    //     endDate: new Date(endDate as Date).getTime().toString()
-    //   }).toString()
-    // })
-    // dispatch(cancelFilter())
+    navigate({
+      pathname: routes.QuanLyVe,
+      search: createSearchParams({
+        ...searchParams,
+        status: useStatus,
+        gates: gates.toString(),
+        startDate: new Date(startDate || 0).getTime().toString(),
+        endDate: new Date(endDate as Date).getTime().toString()
+      }).toString()
+    })
+    dispatch(cancelFilter())
   }
 
   return (

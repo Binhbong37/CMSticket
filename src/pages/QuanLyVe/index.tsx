@@ -20,6 +20,7 @@ import UpdateUseDate from './components/UpdateUseDate'
 import FilterTicket from './components/FilterTicket'
 import { FilterIcon } from '../../components/Icons'
 import styles from '../../assets/css/pages/QuanLyVe/QuanLyVe.module.css'
+import Spinner from '../../components/Spinner'
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +37,9 @@ const cx = classNames.bind(styles);
 //   { id: 10, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "487621489474", tenSuKien: "Sự kiện 1" },
 // ]
 
-function ManagePage() {
+const QuanLyVe = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const dispatch = useAppDispatch()
   const searchParams = useQueryParams()
   const { startDate, endDate, gates, status } = searchParams
@@ -50,6 +53,8 @@ function ManagePage() {
   const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 12);
 
   useEffect(() => {
+    setIsLoading(true)
+
     const statusQuery = (status: string | undefined) => {
       if (status) {
         if (status === 'Tất cả') {
@@ -102,14 +107,17 @@ function ManagePage() {
 
         listTicket.push(doc.data() as any)
       })
+
+      setIsLoading(false)
       setTickets(listTicket)
     })
+
 
     return () => {
       unsubscribe()
     }
   }, [endDate, gates, startDate, status])
-
+  console.log(tickets)
   // useEffect(() => {
   //   const q = query(collection(db, "tickets"), where("statusMessage", "==", 'Đã sử dụng'));
 
@@ -130,7 +138,6 @@ function ManagePage() {
   const handleStartAdd = () => {
     dispatch(startAdd())
   }
-
 
   return (
     <PageWrapper>
@@ -172,7 +179,15 @@ function ManagePage() {
               )
             })} */}
 
-            {(currentData as any[]).map((ticket, index) => (
+            {isLoading && <tr>
+              <td colSpan={7}>
+                <div style={{ marginTop: "5rem" }}>
+                  <Spinner />
+                </div>
+              </td>
+            </tr>}
+
+            {!isLoading && (currentData as any[]).map((ticket, index) => (
               <TableRow ticket={ticket} index={index} key={ticket.id} />
             ))}
           </tbody>
@@ -196,4 +211,4 @@ function ManagePage() {
   )
 }
 
-export default ManagePage
+export default QuanLyVe

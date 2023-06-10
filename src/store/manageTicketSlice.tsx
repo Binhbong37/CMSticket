@@ -28,6 +28,8 @@ export const updateDateTicket = createAsyncThunk(
     await updateDoc(ref, {
       useDate: formUpdate.updateDate
     })
+
+    return 'Updateddd'
   }
 )
 
@@ -82,6 +84,19 @@ const manageTicketSlice = createSlice({
     builder.addCase(checkTicket.rejected, () => {
       console.log('addTicket failled')
     })
+
+    // UpdateTiket
+    builder
+      .addCase(updateDateTicket.pending, () => {
+        console.log('Update Pending')
+      })
+      .addCase(updateDateTicket.fulfilled, (state, action) => {
+        console.log(action.payload)
+        console.log('Update Success')
+      })
+      .addCase(updateDateTicket.rejected, () => {
+        console.log('Update failled')
+      })
   }
 })
 
