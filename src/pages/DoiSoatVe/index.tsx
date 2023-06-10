@@ -17,10 +17,12 @@ import TableHeader from './components/Table/TableHeader';
 import TableRow from './components/Table/TableRow';
 import styles from '../../assets/css/pages/DoiSoatVe/DoiSoatVe.module.css'
 import Spinner from '../../components/Spinner';
+import UpdateChecked from './components/UpdateChecked';
 
 const cx = classNames.bind(styles)
 
 const DoiSoatVe = () => {
+  const checkTicket: any | null = useSelector((state: RootState) => state.manage.checkItem)
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState('')
   const searchParams = useQueryParams()
@@ -142,7 +144,6 @@ const DoiSoatVe = () => {
                 ))
               }
             </tbody>
-
           </table>
 
           {/* paginate */}
@@ -157,6 +158,7 @@ const DoiSoatVe = () => {
         </div>
       </PageWrapper>
       <Filter />
+      {checkTicket && <UpdateChecked />}
     </div>
   )
 }

@@ -4,8 +4,6 @@ import formatDate from '../../../../utils/formatDate';
 import { useAppDispatch } from '../../../../store';
 import { startCheck } from '../../../../store/manageTicketSlice';
 
-// import TicketType from '~/types/TicketType'
-
 import styles from '../../../../assets/css/pages/DoiSoatVe/components/Table.module.css'
 
 const cx = classNames.bind(styles)

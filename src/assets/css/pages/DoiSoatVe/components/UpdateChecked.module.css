@@ -12,7 +12,6 @@
 }
 
 .item :last-child {
-    margin-top: 20px;
     justify-content: center;
 }
 

@@ -35,14 +35,16 @@ function FilterTicket() {
     setGates([e.target.value])
   }
   const handleGateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
     setGates((prev) => {
-      console.log(prev)
       if (prev.includes('Tất cả')) {
         return [e.target.value]
-      } else {
+      }
+      else {
         if (prev.includes(e.target.value)) {
-          const newGates = prev.filter((gate) => gate !== e.target.value)
+          let newGates = prev.filter((gate) => gate !== e.target.value)
+          if (newGates.length <= 0) {
+            return newGates = ['Tất cả']
+          }
           return newGates
         }
         return [...prev, e.target.value]
@@ -56,9 +58,6 @@ function FilterTicket() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(searchParams)
-    console.log({ useStatus })
-    console.log(gates)
     navigate({
       pathname: routes.QuanLyVe,
       search: createSearchParams({

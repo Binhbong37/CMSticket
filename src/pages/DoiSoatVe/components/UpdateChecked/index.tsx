@@ -9,7 +9,7 @@ import Label from '../../../../components/Label';
 import { RootState, useAppDispatch } from '../../../../store';
 
 // import TicketType from '~/types/TicketType'
-import styles from '../../../../assets/css/pages/CheckPage/components/UpdateChecked.module.css'
+import styles from '../../../../assets/css/pages/DoiSoatVe/components/UpdateChecked.module.css'
 
 const cx = classNames.bind(styles)
 

@@ -117,7 +117,7 @@ const QuanLyVe = () => {
       unsubscribe()
     }
   }, [endDate, gates, startDate, status])
-  console.log(tickets)
+
   // useEffect(() => {
   //   const q = query(collection(db, "tickets"), where("statusMessage", "==", 'Đã sử dụng'));
 
