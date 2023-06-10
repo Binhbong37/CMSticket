@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
-import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
+import { collection, onSnapshot, orderBy, query, where, getDocs } from 'firebase/firestore'
 import { useSelector } from 'react-redux'
 import { CSVLink } from 'react-csv'
 import useQueryParams from '../../hooks/useQueryparams';
@@ -23,18 +23,18 @@ import styles from '../../assets/css/pages/QuanLyVe/QuanLyVe.module.css'
 
 const cx = classNames.bind(styles);
 
-const dummyData = [
-  { id: 1, status: 'Hết hạn', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
-  { id: 2, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "156464891479", tenSuKien: "Sự kiện 3" },
-  { id: 3, status: 'Đã sử dụng', gate: 'Cổng 3', codeBoking: "ALTFGHJU", soVe: "148920121478", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
-  { id: 4, status: 'Đã sử dụng', gate: 'Cổng 4', codeBoking: "ALTFGHJU", soVe: "156464891479", tenSuKien: "Sự kiện 3" },
-  { id: 5, status: 'Chưa sử dụng', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "205465031465", tenSuKien: "Sự kiện 1" },
-  { id: 6, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "894648474910", tenSuKien: "Sự kiện 2" },
-  { id: 7, status: 'Hết hạn', gate: 'Cổng 4', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
-  { id: 8, status: 'Chưa sử dụng', gate: 'Cổng 3', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Sự kiện 3" },
-  { id: 9, status: 'Đã sử dụng', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Sự kiện 3" },
-  { id: 10, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "487621489474", tenSuKien: "Sự kiện 1" },
-]
+// const dummyData = [
+//   { id: 1, status: 'Hết hạn', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
+//   { id: 2, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "156464891479", tenSuKien: "Sự kiện 3" },
+//   { id: 3, status: 'Đã sử dụng', gate: 'Cổng 3', codeBoking: "ALTFGHJU", soVe: "148920121478", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
+//   { id: 4, status: 'Đã sử dụng', gate: 'Cổng 4', codeBoking: "ALTFGHJU", soVe: "156464891479", tenSuKien: "Sự kiện 3" },
+//   { id: 5, status: 'Chưa sử dụng', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "205465031465", tenSuKien: "Sự kiện 1" },
+//   { id: 6, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "894648474910", tenSuKien: "Sự kiện 2" },
+//   { id: 7, status: 'Hết hạn', gate: 'Cổng 4', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Hội chợ triển lãm tiêu dùng 2021" },
+//   { id: 8, status: 'Chưa sử dụng', gate: 'Cổng 3', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Sự kiện 3" },
+//   { id: 9, status: 'Đã sử dụng', gate: 'Cổng 1', codeBoking: "ALTFGHJU", soVe: "123456789034", tenSuKien: "Sự kiện 3" },
+//   { id: 10, status: 'Chưa sử dụng', gate: 'Cổng 2', codeBoking: "ALTFGHJU", soVe: "487621489474", tenSuKien: "Sự kiện 1" },
+// ]
 
 function ManagePage() {
   const dispatch = useAppDispatch()
@@ -43,10 +43,12 @@ function ManagePage() {
   const updateItem: any | null = useSelector((state: RootState) => state.manage.updateItem)
   const isAddTicket: boolean = useSelector((state: RootState) => state.manage.isAddTicket)
   const isFilterTicket: boolean = useSelector((state: RootState) => state.manage.isFilterTicket)
-  const [tickets, setTickets] = useState<any[]>([])
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [searchValue, setSearchValue] = useState<string>('')
-  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 12)
+  const [tickets, setTickets] = useState<any[]>([]);
+
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 12);
+
   useEffect(() => {
     const statusQuery = (status: string | undefined) => {
       if (status) {
@@ -97,6 +99,7 @@ function ManagePage() {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const listTicket: any[] = []
       querySnapshot.forEach((doc) => {
+
         listTicket.push(doc.data() as any)
       })
       setTickets(listTicket)
@@ -107,6 +110,18 @@ function ManagePage() {
     }
   }, [endDate, gates, startDate, status])
 
+  // useEffect(() => {
+  //   const q = query(collection(db, "tickets"), where("statusMessage", "==", 'Đã sử dụng'));
+
+  //   async function getT() {
+  //     const querySnapshot = await getDocs(q);
+  //     querySnapshot.forEach((doc) => {
+  //       // doc.data() is never undefined for query doc snapshots
+  //       console.log(doc.id, " => ", doc.data());
+  //     });
+  //   }
+  //   getT()
+  // }, [])
 
   const handleStartFiter = () => {
     dispatch(startFilter())
@@ -116,7 +131,6 @@ function ManagePage() {
     dispatch(startAdd())
   }
 
-  console.log(currentData)
 
   return (
     <PageWrapper>
@@ -152,19 +166,19 @@ function ManagePage() {
             <TableHeader />
           </thead>
           <tbody>
-            {dummyData.map((dumy, index) => {
+            {/* {dummyData.map((dumy, index) => {
               return (
                 <TableRow key={index} index={index} ticket={dumy} />
               )
-            })}
+            })} */}
 
-            {/* {(currentData as any[]).map((ticket, index) => (
+            {(currentData as any[]).map((ticket, index) => (
               <TableRow ticket={ticket} index={index} key={ticket.id} />
-              
-            ))} */}
+            ))}
           </tbody>
         </table>
-        {/* paginate */}
+
+        {/* pagination */}
         {pageSize > 1 && (
           <Pagination
             itemsPerPage={itemsPerPage}

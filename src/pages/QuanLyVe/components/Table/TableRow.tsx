@@ -24,22 +24,21 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
   const { getReferenceProps, getFloatingProps } = useInteractions([hover])
 
   const handleStartUpdateTicket = () => {
-    console.log('Click')
-    // dispatch(startUpdate(ticket))
+    dispatch(startUpdate(ticket))
   }
 
   return (
 
     <tr className='table-row'>
       <td className='table-col center-row'>{index + 1}</td>
-      <td className='table-col'>{ticket.codeBoking}</td>
-      <td className='table-col'>{123456789034}</td>
+      <td className='table-col'>{'ALTFGHJU'}</td>
+      <td className='table-col'>{ticket.id}</td>
       <td
         className={cx('event-name', 'table-col')}
         ref={refs.setReference}
         {...getReferenceProps()}
       >
-        {ticket.tenSuKien}
+        {ticket.packageName}
         {isOpen && (
           <FloatingPortal
             id={id}
@@ -50,16 +49,16 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
               className={cx('popup')}
               {...getFloatingProps()}
             >
-              {ticket.tenSuKien}
+              {ticket.packageName}
             </div>
           </FloatingPortal>
         )}
       </td>
       <td className='table-col'>
-        <StatusTag statusMessage={ticket.status} />
+        <StatusTag statusMessage={ticket.statusMessage} />
       </td>
-      <td className='table-col'>{'14/04/2021'}</td>
-      <td className='table-col'>{'14/04/2021'}</td>
+      <td className='table-col'>{formatDate(ticket.useDate)}</td>
+      <td className='table-col'>{formatDate(ticket.applyDate)}</td>
       <td className='table-col center-row'>{ticket.gate}</td>
       <td className={cx('update', 'table-col')} onClick={() => handleStartUpdateTicket()}>
         <MoreIcon />

@@ -37,7 +37,7 @@ function UpdateUseDate() {
   }
 
   return (
-    <Modal title='Đổi hạn sử dụng vé'>
+    <Modal title='Đổi ngày sử dụng vé'>
       <div className={cx('container')}>
         <div className={cx('block')}>
           <Label label='Số vé' className={cx('label')} />
