@@ -35,7 +35,9 @@ function FilterTicket() {
     setGates([e.target.value])
   }
   const handleGateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
     setGates((prev) => {
+      console.log(prev)
       if (prev.includes('Tất cả')) {
         return [e.target.value]
       } else {
@@ -54,17 +56,20 @@ function FilterTicket() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    navigate({
-      pathname: routes.QuanLyVe,
-      search: createSearchParams({
-        ...searchParams,
-        status: useStatus,
-        gates: gates.toString(),
-        startDate: new Date(startDate || 0).getTime().toString(),
-        endDate: new Date(endDate as Date).getTime().toString()
-      }).toString()
-    })
-    dispatch(cancelFilter())
+    console.log(searchParams)
+    console.log({ useStatus })
+    console.log(gates)
+    // navigate({
+    //   pathname: routes.QuanLyVe,
+    //   search: createSearchParams({
+    //     ...searchParams,
+    //     status: useStatus,
+    //     gates: gates.toString(),
+    //     startDate: new Date(startDate || 0).getTime().toString(),
+    //     endDate: new Date(endDate as Date).getTime().toString()
+    //   }).toString()
+    // })
+    // dispatch(cancelFilter())
   }
 
   return (

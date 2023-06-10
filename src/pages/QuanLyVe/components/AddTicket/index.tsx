@@ -21,7 +21,7 @@ const cx = classNames.bind(styles)
 const gates = ['Cổng 1', 'Cổng 2', 'Cổng 3', 'Cổng 4', 'Cổng 5']
 const ticketType = ['Vé cổng', 'Vé trọn gói']
 const status = ['Chưa sử dụng', 'Đã sử dụng', 'Hết hạn']
-const listPackage = ['Sự kiện 1', 'Sự kiện 2', 'Sự kiện 3']
+const listPackage = ['Sự kiện 1', 'Sự kiện 2', 'Sự kiện 3', 'Hội chợ triển lãm tiêu dùng 2021']
 
 function AddTicket() {
   const today = new Date()
@@ -46,11 +46,10 @@ function AddTicket() {
       applyDate: (applyDate as Date).getTime(),
       useDate: (useDate as Date).getTime()
     }
-
     setIsPending(true)
     await dispatch(addTicket(formData))
     setIsPending(false)
-    // dispatch(cancelAdd())
+    dispatch(cancelAdd())
   })
 
   const handleCancel = () => {

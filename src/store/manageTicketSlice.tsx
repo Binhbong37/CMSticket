@@ -64,7 +64,8 @@ const manageTicketSlice = createSlice({
       state.isFilterTicket = false
     },
     startCheck: (state, actions: PayloadAction<any>) => {
-      state.checkItem = actions.payload
+      console.log(actions)
+      // state.checkItem = actions.payload
     },
     cancelCheck: (state) => {
       state.checkItem = null

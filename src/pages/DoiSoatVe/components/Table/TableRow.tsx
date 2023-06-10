@@ -15,6 +15,7 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
   const dispatch = useAppDispatch()
 
   const handleCheckTicket = () => {
+    window.alert(`Đối soát TICKET ${ticket.id}`)
     dispatch(startCheck(ticket))
   }
 

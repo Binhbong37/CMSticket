@@ -24,8 +24,7 @@ function CheckPage() {
   const { type, checkStatus, startDate, endDate } = searchParams;
 
   const [tickets, setTickets] = useState<any>([])
-  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 8)
-  const checkTicket: any | null = useSelector((state: RootState) => state.manage.checkItem)
+  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 12)
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchValue, setSearchValue] = useState<string>('')
@@ -106,16 +105,25 @@ function CheckPage() {
           </CSVLink>
         </div>
         <div className={cx('content')}>
-          <table className='table'>
-            <thead>
-              <TableHeader />
-            </thead>
-            <tbody>
-              {(currentData as any[]).map((ticket, index) => (
-                <TableRow ticket={ticket} index={index} key={ticket.id} />
-              ))}
-            </tbody>
-          </table>
+          {
+            currentData.length <= 0 ? (<div>
+              <h2>Không tìm thấy vé phù hợp</h2>
+              <p>Vui lòng lọc lại.</p>
+            </div>) : (
+              <table className='table'>
+                <thead>
+                  <TableHeader />
+                </thead>
+                <tbody>
+                  {(currentData as any[]).map((ticket, index) => (
+                    <TableRow ticket={ticket} index={index} key={ticket.id} />
+                  ))}
+                </tbody>
+
+              </table>
+            )
+          }
+
           {/* paginate */}
           {pageSize > 1 && (
             <Pagination
@@ -128,7 +136,6 @@ function CheckPage() {
         </div>
       </PageWrapper>
       <Filter />
-      {checkTicket && 'Updatechecked'}
     </div>
   )
 }
