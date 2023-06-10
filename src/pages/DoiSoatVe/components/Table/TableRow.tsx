@@ -15,7 +15,7 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
   const dispatch = useAppDispatch()
 
   const handleCheckTicket = () => {
-    window.alert(`Đối soát TICKET ${ticket.id}`)
+    window.alert(`Đối soát VÉ ${ticket.id}`)
     dispatch(startCheck(ticket))
   }
 
@@ -23,7 +23,6 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
     <tr className='table-row'>
       <td className='table-col center-row'>{index + 1}</td>
       <td className='table-col'>{ticket.id}</td>
-
       <td className='table-col'>{formatDate(ticket.applyDate)}</td>
       <td className='table-col'>{ticket.type}</td>
       <td className='table-col center-row'>{ticket.gate}</td>

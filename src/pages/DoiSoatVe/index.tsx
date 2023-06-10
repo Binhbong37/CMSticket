@@ -16,10 +16,13 @@ import Pagination from '../../components/Pagination';
 import TableHeader from './components/Table/TableHeader';
 import TableRow from './components/Table/TableRow';
 import styles from '../../assets/css/pages/DoiSoatVe/DoiSoatVe.module.css'
+import Spinner from '../../components/Spinner';
 
 const cx = classNames.bind(styles)
 
 function CheckPage() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState('')
   const searchParams = useQueryParams()
   const { type, checkStatus, startDate, endDate } = searchParams;
 
@@ -30,6 +33,8 @@ function CheckPage() {
   const [searchValue, setSearchValue] = useState<string>('')
 
   useEffect(() => {
+    setIsLoading(true)
+    setErr('')
     const typeQuery = (type: string | undefined) => {
       if (type) {
         if (type === 'Tất cả') {
@@ -80,6 +85,13 @@ function CheckPage() {
       querySnapshot.forEach((doc) => {
         listTicket.push(doc.data() as any)
       })
+
+      if (listTicket.length <= 0) {
+        setIsLoading(false)
+        setErr('Không tìm thấy vé');
+        return;
+      }
+      setIsLoading(false)
       setTickets(listTicket)
     })
 
@@ -105,24 +117,33 @@ function CheckPage() {
           </CSVLink>
         </div>
         <div className={cx('content')}>
-          {
-            currentData.length <= 0 ? (<div>
-              <h2>Không tìm thấy vé phù hợp</h2>
-              <p>Vui lòng lọc lại.</p>
-            </div>) : (
-              <table className='table'>
-                <thead>
-                  <TableHeader />
-                </thead>
-                <tbody>
-                  {(currentData as any[]).map((ticket, index) => (
-                    <TableRow ticket={ticket} index={index} key={ticket.id} />
-                  ))}
-                </tbody>
+          <table className='table'>
+            <thead>
+              <TableHeader />
+            </thead>
+            <tbody>
+              {isLoading && <tr>
+                <td colSpan={6} rowSpan={3}>
+                  <div style={{ marginTop: '5rem' }}>
+                    <Spinner />
+                  </div>
+                </td>
+              </tr>}
+              {
+                err && (<tr>
+                  <td colSpan={6}>
+                    <p style={{ textAlign: 'center', marginTop: "5rem" }}>{err}</p>
+                  </td>
+                </tr>)
+              }
+              {
+                !isLoading && !err && (currentData as any[]).map((ticket, index) => (
+                  <TableRow ticket={ticket} index={index} key={ticket.id} />
+                ))
+              }
+            </tbody>
 
-              </table>
-            )
-          }
+          </table>
 
           {/* paginate */}
           {pageSize > 1 && (

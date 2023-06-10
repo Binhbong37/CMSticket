@@ -11,8 +11,6 @@ import styles from '../../../../assets/css/pages/QuanLyVe/components/Table.modul
 
 const cx = classNames.bind(styles)
 
-
-
 function TableRow({ ticket, index }: { ticket: any; index: number }) {
   const id = useId()
   const dispatch = useAppDispatch()

@@ -46,7 +46,7 @@ function ManagePage() {
   const [tickets, setTickets] = useState<any[]>([])
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchValue, setSearchValue] = useState<string>('')
-  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 8)
+  const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(tickets as [], 12)
   useEffect(() => {
     const statusQuery = (status: string | undefined) => {
       if (status) {
@@ -115,6 +115,8 @@ function ManagePage() {
   const handleStartAdd = () => {
     dispatch(startAdd())
   }
+
+  console.log(currentData)
 
   return (
     <PageWrapper>
