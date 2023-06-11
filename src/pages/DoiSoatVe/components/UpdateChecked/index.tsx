@@ -7,8 +7,6 @@ import Button from '../../../../components/Button';
 import Modal from '../../../../components/Modal';
 import Label from '../../../../components/Label';
 import { RootState, useAppDispatch } from '../../../../store';
-
-// import TicketType from '~/types/TicketType'
 import styles from '../../../../assets/css/pages/DoiSoatVe/components/UpdateChecked.module.css'
 
 const cx = classNames.bind(styles)

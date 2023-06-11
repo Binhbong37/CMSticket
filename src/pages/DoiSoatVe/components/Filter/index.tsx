@@ -12,8 +12,6 @@ import Button from '../../../../components/Button';
 import CalenderPicker from '../../../../components/CalendarPicker';
 import CheckInput from '../../../../components/CheckInput';
 
-
-// import TicketType from '~/types/TicketType'
 import styles from '../../../../assets/css/pages/DoiSoatVe/components/Filter.module.css'
 
 const cx = classNames.bind(styles)

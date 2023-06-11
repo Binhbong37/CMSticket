@@ -20,7 +20,8 @@ import UpdateUseDate from './components/UpdateUseDate'
 import FilterTicket from './components/FilterTicket'
 import { FilterIcon } from '../../components/Icons'
 import styles from '../../assets/css/pages/QuanLyVe/QuanLyVe.module.css'
-import Spinner from '../../components/Spinner'
+import Spinner from '../../components/Spinner';
+import { TicketsType } from '../../types/Tickets.type'
 
 const cx = classNames.bind(styles);
 
@@ -43,10 +44,10 @@ const QuanLyVe = () => {
   const dispatch = useAppDispatch()
   const searchParams = useQueryParams()
   const { startDate, endDate, gates, status } = searchParams
-  const updateItem: any | null = useSelector((state: RootState) => state.manage.updateItem)
+  const updateItem: TicketsType | null = useSelector((state: RootState) => state.manage.updateItem)
   const isAddTicket: boolean = useSelector((state: RootState) => state.manage.isAddTicket)
   const isFilterTicket: boolean = useSelector((state: RootState) => state.manage.isFilterTicket)
-  const [tickets, setTickets] = useState<any[]>([]);
+  const [tickets, setTickets] = useState<TicketsType[]>([]);
 
   const [searchValue, setSearchValue] = useState<string>('');
 
@@ -102,10 +103,10 @@ const QuanLyVe = () => {
       endDateQuery(endDate)
     )
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const listTicket: any[] = []
+      const listTicket: TicketsType[] = []
       querySnapshot.forEach((doc) => {
 
-        listTicket.push(doc.data() as any)
+        listTicket.push(doc.data() as TicketsType)
       })
 
       setIsLoading(false)
@@ -149,15 +150,15 @@ const QuanLyVe = () => {
           className={cx('tool__search')}
         />
         <div className={cx('tool__btn')}>
-          <Button large onClick={handleStartAdd}>
+          {/* <Button large onClick={handleStartAdd}>
             Thêm vé
-          </Button>
+          </Button> */}
           <Button large outline leftIcon={<FilterIcon />} onClick={handleStartFiter}>
             Lọc vé
           </Button>
           <CSVLink
             data={tickets}
-            filename={'my-file.csv'}
+            filename={'quan-ly-ve.csv'}
             target='_blank'
             className={cx('tool__export')}
           >
@@ -187,7 +188,7 @@ const QuanLyVe = () => {
               </td>
             </tr>}
 
-            {!isLoading && (currentData as any[]).map((ticket, index) => (
+            {!isLoading && (currentData as TicketsType[]).map((ticket, index) => (
               <TableRow ticket={ticket} index={index} key={ticket.id} />
             ))}
           </tbody>

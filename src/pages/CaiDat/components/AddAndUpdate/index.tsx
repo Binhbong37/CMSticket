@@ -16,7 +16,6 @@ import CalenderPicker from '../../../../components/CalendarPicker';
 import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import RequireTag from '../../../../components/RequiredTag';
-// import PackageType from '~/types/PackageType';
 import styles from '../../../../assets/css/pages/CaiDat/components/AddAndUpdate.module.css';
 
 const cx = classNames.bind(styles)
