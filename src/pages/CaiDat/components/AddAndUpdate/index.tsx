@@ -80,7 +80,9 @@ function AddAndUpdate() {
   }
 
   return (
-    <Modal title={editItem ? 'Cập nhật thông tin gói vé' : 'Thêm gói vé'}>
+    <Modal title={editItem ? 'Cập nhật thông tin gói vé' : 'Thêm gói vé'}
+      oncloseModal={handleClose}
+    >
       <form className={cx('container')} onSubmit={onSubmit}>
         <div>
           <Label label='Tên gói vé:' require className={cx('label')} />

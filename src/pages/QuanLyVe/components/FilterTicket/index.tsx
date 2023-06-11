@@ -72,7 +72,9 @@ function FilterTicket() {
   }
 
   return (
-    <Modal title='Lọc vé'>
+    <Modal title='Lọc vé'
+      oncloseModal={handleCancel}
+    >
       <form className={cx('container')} onSubmit={handleSubmit}>
         <div className={cx('group', 'group__2')}>
           <div className={cx('item')}>

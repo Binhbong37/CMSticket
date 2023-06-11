@@ -26,8 +26,14 @@ function UpdateChecked() {
     dispatch(cancelCheck())
   }
 
+  const closeCheck = () => {
+    dispatch(cancelCheck())
+  }
+
   return (
-    <Modal title='Chốt đối soát'>
+    <Modal title='Chốt đối soát'
+      oncloseModal={closeCheck}
+    >
       <div className={cx('container')}>
         <div className={cx('item')}>
           <Label label='Số vé:' className={cx('label')} />

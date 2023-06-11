@@ -37,7 +37,9 @@ function UpdateUseDate() {
   }
 
   return (
-    <Modal title='Đổi ngày sử dụng vé'>
+    <Modal title='Đổi ngày sử dụng vé'
+      oncloseModal={handleCancel}
+    >
       <div className={cx('container')}>
         <div className={cx('block')}>
           <Label label='Số vé' className={cx('label')} />

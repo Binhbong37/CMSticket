@@ -78,7 +78,9 @@ function AddTicket() {
 
 
   return (
-    <Modal title='Thêm vé'>
+    <Modal title='Thêm vé'
+      oncloseModal={handleCancel}
+    >
       <form className={cx('container')} onSubmit={onSubmit}>
         <div>
           <Label require label='Tên gói vé' className={cx('label')} />
