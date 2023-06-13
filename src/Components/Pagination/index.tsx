@@ -2,7 +2,6 @@ import classNames from 'classnames/bind'
 import { useLayoutEffect } from 'react'
 import { Link, createSearchParams } from 'react-router-dom'
 import { ChevronLeftIcon, ChevronRightIcon } from '../Icons'
-// import useQueryParam from '~/hooks/useQueryParams'
 import useQueryParams from '../../hooks/useQueryparams'
 import styles from '../../assets/css/components/Pagination.module.css'
 

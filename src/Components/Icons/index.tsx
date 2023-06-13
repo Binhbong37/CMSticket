@@ -197,10 +197,10 @@ export const FilterIcon = ({ className }: Props) => (
 export const ChevronLeftIcon = ({ className }: Props) => {
   return (
     <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' className={className}>
-      <path d='M15 7L9 12L15 17' fill='currentColor' />
+      <path d='M15 7L9 12L15 17' fill='#FF993C' />
       <path
         d='M15 7L9 12L15 17L15 7Z'
-        stroke='currentColor'
+        stroke='#FF993C'
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -212,10 +212,10 @@ export const ChevronLeftIcon = ({ className }: Props) => {
 export const ChevronRightIcon = ({ className }: Props) => {
   return (
     <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' className={className}>
-      <path d='M9 17L15 12L9 7' fill='currentColor' />
+      <path d='M9 17L15 12L9 7' fill='#FF993C' />
       <path
         d='M9 17L15 12L9 7L9 17Z'
-        stroke='currentColor'
+        stroke='#FF993C'
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'

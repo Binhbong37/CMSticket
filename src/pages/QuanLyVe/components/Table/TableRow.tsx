@@ -56,9 +56,16 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
       <td className='table-col'>
         <StatusTag statusMessage={ticket.statusMessage} />
       </td>
-      <td className='table-col'>{formatDate(ticket.useDate)}</td>
+      <td className='table-col'>{
+        ticket.statusMessage === "Đã sử dụng" ? formatDate(ticket.useDate) : ""
+      }</td>
       <td className='table-col'>{formatDate(ticket.applyDate)}</td>
-      <td className='table-col center-row'>{ticket.gate}</td>
+      <td className='table-col center-row'>
+        {
+          ticket.statusMessage === 'Đã sử dụng' ? ticket.gate : '-'
+
+        }
+      </td>
       <td className={cx('table-col')}>
         {
           ticket.statusMessage === "Chưa sử dụng" && <MoreIcon
