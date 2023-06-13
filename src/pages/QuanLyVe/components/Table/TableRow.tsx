@@ -1,16 +1,15 @@
 import classNames from 'classnames/bind'
 import { useId, useState } from 'react'
 import { useFloating, FloatingPortal, useInteractions, useHover } from '@floating-ui/react'
-
 import formatDate from '../../../../utils/formatDate'
 import { useAppDispatch } from '../../../../store'
 import { startUpdate } from '../../../../store/manageTicketSlice'
 import StatusTag from '../../../../components/StatusTag'
 import { MoreIcon } from '../../../../components/Icons'
-import styles from '../../../../assets/css/pages/QuanLyVe/components/Table.module.css'
+import styles from '../../../../assets/css/pages/QuanLyVe/components/Table.module.css';
+
 
 const cx = classNames.bind(styles)
-
 function TableRow({ ticket, index }: { ticket: any; index: number }) {
   const id = useId()
   const dispatch = useAppDispatch()
@@ -60,8 +59,13 @@ function TableRow({ ticket, index }: { ticket: any; index: number }) {
       <td className='table-col'>{formatDate(ticket.useDate)}</td>
       <td className='table-col'>{formatDate(ticket.applyDate)}</td>
       <td className='table-col center-row'>{ticket.gate}</td>
-      <td className={cx('update', 'table-col')} onClick={() => handleStartUpdateTicket()}>
-        <MoreIcon />
+      <td className={cx('table-col')}>
+        {
+          ticket.statusMessage === "Chưa sử dụng" && <MoreIcon
+            className={cx('update')}
+            onClick={() => handleStartUpdateTicket()}
+          />
+        }
       </td>
     </tr>
   )

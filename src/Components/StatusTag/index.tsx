@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind'
 import { DotIcon } from '../Icons'
 import styles from '../../assets/css/components/StatusTag.module.css'
-
 const cx = classNames.bind(styles)
 
 export interface StatusProps {

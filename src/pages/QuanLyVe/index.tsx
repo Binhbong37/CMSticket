@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
-import { collection, onSnapshot, orderBy, query, where, getDocs } from 'firebase/firestore'
+import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { useSelector } from 'react-redux'
 import { CSVLink } from 'react-csv'
 import useQueryParams from '../../hooks/useQueryparams';

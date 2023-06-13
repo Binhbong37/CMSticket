@@ -1,5 +1,6 @@
 interface Props {
-  className?: string
+  className?: string,
+  onClick?: () => void
 }
 
 export function HiddenIcon({ className }: Props) {
@@ -238,7 +239,7 @@ export const DotIcon = ({ className }: Props) => {
   )
 }
 
-export const MoreIcon = ({ className }: Props) => (
+export const MoreIcon = ({ className, onClick }: Props) => (
   <svg
     width='4'
     height='18'
@@ -246,6 +247,7 @@ export const MoreIcon = ({ className }: Props) => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
     className={className}
+    onClick={onClick}
   >
     <path
       opacity='0.7'
