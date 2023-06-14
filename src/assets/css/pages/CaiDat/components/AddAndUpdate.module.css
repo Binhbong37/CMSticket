@@ -26,6 +26,11 @@
     margin-bottom: 10px;
 }
 
+.dateGr {
+    display: flex;
+    column-gap: 10px;
+}
+
 .checkbox-item {
     display: flex;
     align-items: center;

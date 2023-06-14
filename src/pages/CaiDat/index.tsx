@@ -30,7 +30,7 @@ function SettingPackagePage() {
   const editPackage: any | null = useSelector((state: RootState) => state.package.editItem)
   const [listPackage, setListPackage] = useState<any[]>([])
   const { currentData, itemsPerPage, pageSize, setItemOffset } = usePagination(listPackage as [], 8)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const [searchValue, setSearchValue] = useState<string>('')
 
   useEffect(() => {

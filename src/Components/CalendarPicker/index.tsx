@@ -11,7 +11,7 @@ import {
   type Placement
 } from '@floating-ui/react'
 import { format } from 'date-fns'
-import { CalendarIcon } from '../Icons'
+import { CalendarIcon, ClockIcon } from '../Icons'
 import styles from '../../assets/css/components/CalenderPicker.module.css'
 import 'react-day-picker/dist/style.css'
 
@@ -26,12 +26,12 @@ interface Props {
 
 
 
-function CalenderPicker({
-  formatDate = 'dd/MM/yyy',
+const CalenderPicker = ({
+  formatDate = 'HH:mm:ss',
   placement = 'bottom-start',
   selectedDate,
   setSelectedDate
-}: Props) {
+}: Props) => {
   const id = useId()
   const [isOpen, setIsOpen] = useState(false)
   const { refs, floatingStyles, context } = useFloating({

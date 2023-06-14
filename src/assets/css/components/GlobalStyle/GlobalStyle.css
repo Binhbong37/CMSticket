@@ -44,3 +44,16 @@ button {
     outline: none;
     border: none;
 }
+
+.ant-picker {
+    width: 120px !important;
+    height: 43px;
+}
+
+.ant-picker-suffix {
+    font-size: 2rem;
+}
+
+.ant-picker-suffix span {
+    color: #ff993c;
+}

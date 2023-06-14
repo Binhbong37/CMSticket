@@ -17,6 +17,7 @@ import Button from '../../../../components/Button';
 import Select from '../../../../components/Select';
 import RequireTag from '../../../../components/RequiredTag';
 import styles from '../../../../assets/css/pages/CaiDat/components/AddAndUpdate.module.css';
+import ClockTime from '../../../../components/CalendarPicker/ClockTime';
 
 const cx = classNames.bind(styles)
 
@@ -33,7 +34,7 @@ function AddAndUpdate() {
   const [isCheckComboPrice, stIsCheckComboPrice] = useState<boolean>(
     Boolean(editItem?.comboPrice) || false
   )
-  // const [isPending, setIsPending] = useState<boolean>(false)
+  const [isPending, setIsPending] = useState<boolean>(false)
 
   const {
     register,
@@ -97,11 +98,17 @@ function AddAndUpdate() {
         <div className={cx('group')}>
           <div>
             <Label label='Ngày áp dụng:' className={cx('label')} />
-            <CalenderPicker selectedDate={applyDate} setSelectedDate={setApplyDate} />
+            <div className={cx('dateGr')}>
+              <CalenderPicker selectedDate={applyDate} setSelectedDate={setApplyDate} />
+              <ClockTime />
+            </div>
           </div>
           <div>
             <Label label='Ngày hết hạn:' className={cx('label')} />
-            <CalenderPicker selectedDate={expirationDate} setSelectedDate={setExpirationDate} />
+            <div className={cx('dateGr')}>
+              <CalenderPicker selectedDate={expirationDate} setSelectedDate={setExpirationDate} />
+              <ClockTime />
+            </div>
           </div>
         </div>
         <div className={cx('check-group')}>
@@ -163,7 +170,7 @@ function AddAndUpdate() {
             Huỷ
           </Button>
           <Button large
-          // disabled={isPending}
+            disabled={isPending}
           >
             Lưu
           </Button>
