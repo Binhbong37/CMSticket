@@ -27,7 +27,7 @@ interface Props {
 
 
 const CalenderPicker = ({
-  formatDate = 'HH:mm:ss',
+  formatDate = 'dd/MM/yyy',
   placement = 'bottom-start',
   selectedDate,
   setSelectedDate

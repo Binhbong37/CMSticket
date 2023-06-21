@@ -6,7 +6,8 @@ import formatDate from '../../../../utils/formatDate'
 import { useAppDispatch } from '../../../../store'
 import { startEdit } from '../../../../store/packageSlice'
 import StatusTag from '../../../../components/StatusTag'
-// import PackageType from '~/types/PackageType'
+// import PackageType from '~/types/PackageType';
+import { EditIcon } from '../../../../components/Icons'
 import styles from '../../../../assets/css/pages/CaiDat/components/Table.module.css'
 
 const cx = classNames.bind(styles)
@@ -62,6 +63,7 @@ function TableRow({ packageItem, index }: { packageItem: any; index: number }) {
         <StatusTag statusMessage={packageItem.statusMessage} />
       </td>
       <td className={cx('table-col', 'table-btn', 'update')} onClick={handleUpdate}>
+        <EditIcon />
         Cập nhật
       </td>
     </tr>

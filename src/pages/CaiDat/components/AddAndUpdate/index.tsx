@@ -59,13 +59,11 @@ function AddAndUpdate() {
       comboPrice,
       comboQuantity
     }
-
-    console.log(form)
-    // setIsPending(true)
-    // editItem ? await dispatch(editPackage(form)) : await dispatch(addPackage(form))
-    // setIsPending(false)
-    // dispatch(closeAdd())
-    // dispatch(cancelEdit())
+    setIsPending(true)
+    editItem ? await dispatch(editPackage(form)) : await dispatch(addPackage(form))
+    setIsPending(false)
+    dispatch(closeAdd())
+    dispatch(cancelEdit())
   })
 
   const handleCheckPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
