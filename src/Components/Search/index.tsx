@@ -11,7 +11,10 @@ interface Props {
 }
 
 function Search({ className, placeholder = 'Nhập từ khóa', setSearchValue }: Props) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log(e.target.value)
+    setSearchValue(e.target.value)
+  }
 
   return (
     <div className={cx('wrapper', className)}>

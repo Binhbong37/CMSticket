@@ -6,7 +6,6 @@ import formatDate from '../../../../utils/formatDate'
 import { useAppDispatch } from '../../../../store'
 import { startEdit } from '../../../../store/packageSlice'
 import StatusTag from '../../../../components/StatusTag'
-// import PackageType from '~/types/PackageType';
 import { EditIcon } from '../../../../components/Icons'
 import styles from '../../../../assets/css/pages/CaiDat/components/Table.module.css'
 

@@ -140,6 +140,8 @@ const QuanLyVe = () => {
     dispatch(startAdd())
   }
 
+  console.log(searchValue)
+
   return (
     <PageWrapper>
       <PageTitle title='Danh sách vé' />
